@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html onmouseover="load()">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Arial, Helvetica, sans-serif;
+    margin: 5%;
+    padding: 5%;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -24,6 +27,7 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    text-align: center;
 }
 
 button:hover {
@@ -119,17 +123,27 @@ span.psw {
        width: 100%;
     }
 }
+
 </style>
+
+<script type="text/javascript">
+    function load(){
+        document.getElementById("login").click();
+    }
+</script>
+
 </head>
-<body>
+<body>  
 
-<h2>Modal Login Form</h2>
+<div align="center">
+<h2 align="center">Login to Continue</h2>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<button id="login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+</div>
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="forum.php" method="POST">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
      
@@ -137,10 +151,10 @@ span.psw {
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="email" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="password" required>
         
       <button type="submit">Login</button>
       <label>
@@ -150,7 +164,7 @@ span.psw {
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+        <span class="psw">Create <a href="account.html">account?</a></span>
     </div>
   </form>
 </div>
